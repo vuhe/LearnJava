@@ -1,0 +1,32 @@
+1: package io;
+2: 
+3: import java.io.*;
+4: 
+5: /**
+6:  * 测试
+7:  *
+8:  * @className: BasicFileOutput
+9:  * @author: zhuhe
+10:  * @date: 2020/6/8 18:39
+11:  */
+12: public class BasicFileOutput {
+13:     private static final String OUT_PATH = "./out/";
+14:     private static final String PATH = "./src/io/";
+15:     private static final String OUT_FILE = "BasicFileOutput.out";
+16:     private static final String FILE = "BasicFileOutput.java";
+17: 
+18:     public static void main(String[] args) throws IOException {
+19:         BufferedReader in = new BufferedReader(
+20:                 new StringReader(
+21:                         BufferedInputFile.read(PATH + FILE)));
+22:         PrintWriter out = new PrintWriter(
+23:                 new BufferedWriter(new FileWriter(OUT_PATH + OUT_FILE)));
+24:         int lineCount = 1;
+25:         String s;
+26:         while ((s = in.readLine()) != null) {
+27:             out.println(lineCount++ + ": " + s);
+28:         }
+29:         out.close();
+30:         System.out.println(BufferedInputFile.read(OUT_PATH + OUT_FILE));
+31:     }
+32: }
