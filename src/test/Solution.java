@@ -6,6 +6,7 @@ import java.util.*;
 
 class Solution {
 
+    final
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
         Queue<TreeNode> queue = new LinkedList<>();
         if (root != null) {
@@ -39,15 +40,12 @@ class Solution {
 //        System.out.println(key);
 //        Map<Integer, Integer> a = new HashMap<>();
 //        Character a0;
-        String html = """
-                Test
-                    he
-                one
-                """;
-        System.out.println(html);
+        int a = 12, b = 24;
+        boolean x = (a > b);
+        boolean y = (a != b);
+        boolean z = (a + b == 36);
+        System.out.println("x=" + x);
+        System.out.println("y=" + y);
+        System.out.println("z=" + z);
     }
-}
-
-record Test() {
-
 }
