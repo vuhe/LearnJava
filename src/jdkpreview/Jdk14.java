@@ -26,6 +26,25 @@ public class Jdk14 {
             System.out.println("Object is not a String");
         }
     }
+
+    public void switchTest() {
+        int num = 2;
+        switch (num) {
+            case 0, 1 -> System.out.println("The num is" + num);
+            case 2, 3 -> System.out.println("Test num is Ok");
+            default -> System.out.println("This is default");
+        }
+        num = switch (num) {
+            case 0, 1 -> 0;
+            case 2, 3 -> {
+                int a = num % 2;
+                System.out.println(a);
+                yield a;
+            }
+            default -> -1;
+        };
+        System.out.println(num);
+    }
 }
 
 record Person(String name, int age){}
