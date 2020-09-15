@@ -1,6 +1,6 @@
 package jdkpreview;
 
-public class Jdk14 {
+public class Jdk17 {
     /**
      * 代码块
      */

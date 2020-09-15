@@ -13,22 +13,28 @@ public class Jdk11 {
 
     public void stringImprove() {
         // 判断字符串是否为空白
-        " ".isBlank();// true
+        var test = " ".isBlank();// true
+        System.out.println(test);
 
         //去除首尾空格
-        " Java stack ".strip();// "Java stack"
+        var str = " Java stack ".strip();// "Java stack"
+        System.out.println(str);
 
         // 去除尾部空格
-        "Java stack ".stripTrailing();// " Java stack"
+        str = "Java stack ".stripTrailing();// " Java stack"
+        System.out.println(str);
 
         // 去除首部空格
-        " Java stack".stripLeading();// "Java stack "
+        str = " Java stack".stripLeading();// "Java stack "
+        System.out.println(str);
 
         // 复制字符串
-        "Java".repeat(3);// "JavaJavaJava"
+        str = "Java".repeat(3);// "JavaJavaJava"
+        System.out.println(str);
 
         // 行数统计
-        "A\nB\nC".lines().count();// 3
+        var n = "A\nB\nC".lines().count();// 3
+        System.out.println(n);
     }
 
     public void collectionImprove() {
