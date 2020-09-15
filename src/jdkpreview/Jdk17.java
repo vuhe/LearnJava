@@ -28,7 +28,7 @@ public class Jdk17 {
     }
 
     public void switchTest() {
-        int num = 2;
+        int num = (int)(Math.random() * 10) % 4;
         switch (num) {
             case 0, 1 -> System.out.println("The num is" + num);
             case 2, 3 -> System.out.println("Test num is Ok");

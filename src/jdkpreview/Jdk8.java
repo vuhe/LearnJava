@@ -33,7 +33,7 @@ public class Jdk8 {
      * 往现存接口中添加新的方法，
      * 即不强制那些实现了该接口的类也同时实现这个新加的方法。
      */
-    private interface Defaulable {
+    private interface Defaultable {
         // Interfaces now allow default methods, the implementer may or
         // may not implement (override) them.
         default String notRequired() {
