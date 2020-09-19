@@ -35,7 +35,6 @@ class Solution {
 
     public static void main(String[] args) {
         Solution s0 = new Solution();
-
 //        double key = s0.maxProbability(3, new int[][]{{0,1},{1,2},{0,2}}, new double[]{0.5,0.5,0.2}, 0, 2);
 //        System.out.println(key);
 //        Map<Integer, Integer> a = new HashMap<>();
