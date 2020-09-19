@@ -45,6 +45,15 @@ public class Jdk17 {
         };
         System.out.println(num);
     }
+
+    public static void recordTest() {
+        Person p = new Person("you", 9);
+        p.test();
+    }
 }
 
-record Person(String name, int age){}
+record Person(String name, int age){
+    public void test() {
+        System.out.println(name);
+    }
+}
