@@ -41,5 +41,14 @@ class Solution {
 //        Character a0;
         System.out.println('\\' + 5);
         Jdk17.recordTest();
+
+        String a="Java";
+        String b="Java";
+        String x="Ja";
+        String y="va";
+        String c=x+y;
+        System.out.println(a == b);
+        System.out.println(a == c);
+        System.out.println(b == c);
     }
 }
