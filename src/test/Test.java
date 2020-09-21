@@ -32,7 +32,17 @@ public class Test {
         System.out.println("(3) no output");
 
         // (4) 将字符串中每个单词的第一个字母变成大写，输出到控制台
-        System.out.println(string.toUpperCase());
+        String[] ans = string.split(" ");
+        StringBuilder sb1 = new StringBuilder();
+        for (String s : ans) {
+            sb1.append(Character.toUpperCase(s.charAt(0)));
+            for (int i = 1; i < s.length(); i++) {
+                sb1.append(s.charAt(i));
+            }
+            sb1.append(" ");
+        }
+        sb1.deleteCharAt(sb1.length() - 1);
+        System.out.println(sb1);
 
         // (5) 实现该字符串的逆序输出
         System.out.println(sb.reverse());

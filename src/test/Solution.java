@@ -44,6 +44,9 @@ class Solution {
 
         String a="Java";
         String b="Java";
+
+        b.indexOf('s', b.indexOf('s') + 1);
+
         String x="Ja";
         String y="va";
         String c=x+y;
