@@ -13,7 +13,7 @@ public class MergeBU<T extends Comparable<? super T>> extends Example<T> {
     }
 
     @Override
-    protected void sort() {
+    public void sort() {
         int N = array.length;
         for (int sz = 1; sz < N; sz = sz + sz) {
             for (int low = 0; low < N - sz; low += sz + sz) {

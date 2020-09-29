@@ -7,7 +7,7 @@ public class Merge<T extends Comparable<? super T>> extends MergeBU<T> {
     }
 
     @Override
-    protected void sort() {
+    public void sort() {
         sort(0, array.length - 1);
     }
 

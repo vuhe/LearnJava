@@ -7,7 +7,7 @@ public class Shell<T extends Comparable<? super T>> extends Example<T> {
     }
 
     @Override
-    protected void sort() {
+    public void sort() {
         int N = array.length;
         int h = 1;
         while (h < N / 3) {

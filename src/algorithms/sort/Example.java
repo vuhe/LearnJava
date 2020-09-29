@@ -10,7 +10,7 @@ public abstract class Example<T extends Comparable<? super T>> {
         this.array = Arrays.copyOf(array, array.length);
     }
 
-    protected abstract void sort();
+    public abstract void sort();
 
     protected boolean less(T v, T w) {
         return v.compareTo(w) < 0;
@@ -42,5 +42,9 @@ public abstract class Example<T extends Comparable<? super T>> {
         sort();
         assert isSorted();
         show();
+    }
+
+    public T[] getArray() {
+        return array;
     }
 }

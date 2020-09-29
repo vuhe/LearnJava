@@ -1,5 +1,6 @@
-package algorithms.sort;
+package algorithms;
 
+import algorithms.sort.*;
 import edu.princeton.cs.algs4.StdOut;
 import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.Stopwatch;
@@ -7,31 +8,7 @@ import edu.princeton.cs.algs4.Stopwatch;
 public class SortCompare {
     public static double time(SortFunction alg, Double[] a){
         Stopwatch timer = new Stopwatch();
-        switch (alg) {
-            case Selection:
-                new Selection<>(a).sort();
-                 break;
-            case Insertion:
-                new Insertion<>(a).sort();
-                break;
-            case Shell:
-                new Shell<>(a).sort();
-                break;
-            case Merge:
-                new Merge<>(a).sort();
-                break;
-            case MergeBU:
-                new MergeBU<>(a).sort();
-                break;
-            case Quick:
-                new Quick<>(a).sort();
-                break;
-            case Quick3way:
-                new Quick3way<>(a).sort();
-                break;
-            default:
-                break;
-        }
+        SortUnit.sortOf(a, alg);
         return timer.elapsedTime();
     }
 
@@ -73,8 +50,4 @@ public class SortCompare {
         double t7 = timeRandomInput(SortFunction.Quick3way, N, T);
         StdOut.printf("    %s use %.2f seconds\n", SortFunction.Quick3way, t7);
     }
-}
-
-enum SortFunction {
-    Selection, Insertion, Shell, Merge, MergeBU, Quick, Quick3way
 }
