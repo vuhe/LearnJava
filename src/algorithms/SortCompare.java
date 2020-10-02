@@ -1,14 +1,17 @@
 package algorithms;
 
-import edu.princeton.cs.algs4.StdOut;
-import edu.princeton.cs.algs4.StdRandom;
-import edu.princeton.cs.algs4.Stopwatch;
+import java.util.Arrays;
+import java.util.Random;
 
 public class SortCompare {
-    public static double time(SortFunction alg, Double[] a){
-        Stopwatch timer = new Stopwatch();
+    private static final long seed = System.currentTimeMillis();
+    private static final Random random = new Random(seed);
+
+    public static double time(SortFunction alg, Double[] a) {
+        long start = System.currentTimeMillis();
         SortUnit.sortOf(a, alg);
-        return timer.elapsedTime();
+        long end = System.currentTimeMillis();
+        return (end - start) / 1000.0;
     }
 
     public static double timeRandomInput(SortFunction alg, int N, int T) {
@@ -16,7 +19,7 @@ public class SortCompare {
         Double[] a = new Double[N];
         for (int t = 0; t < T; t++) {
             for (int i = 0; i < N; i++) {
-                a[i] = StdRandom.uniform();
+                a[i] = random.nextDouble();
             }
             total += time(alg, a);
         }
@@ -29,24 +32,24 @@ public class SortCompare {
         System.out.printf("For %d random Doubles\n", N);
 
         double t1 = timeRandomInput(SortFunction.Insertion, N, T);
-        StdOut.printf("    %s use %.2f seconds\n", SortFunction.Insertion, t1);
+        System.out.printf("    %s use %.2f seconds\n", SortFunction.Insertion, t1);
 
         double t2 = timeRandomInput(SortFunction.Selection, N, T);
-        StdOut.printf("    %s use %.2f seconds\n", SortFunction.Selection, t2);
+        System.out.printf("    %s use %.2f seconds\n", SortFunction.Selection, t2);
 
         double t3 = timeRandomInput(SortFunction.Shell, N, T);
-        StdOut.printf("    %s use %.2f seconds\n", SortFunction.Shell, t3);
+        System.out.printf("    %s use %.2f seconds\n", SortFunction.Shell, t3);
 
         double t4 = timeRandomInput(SortFunction.Merge, N, T);
-        StdOut.printf("    %s use %.2f seconds\n", SortFunction.Merge, t4);
+        System.out.printf("    %s use %.2f seconds\n", SortFunction.Merge, t4);
 
         double t5 = timeRandomInput(SortFunction.MergeBU, N, T);
-        StdOut.printf("    %s use %.2f seconds\n", SortFunction.MergeBU, t5);
+        System.out.printf("    %s use %.2f seconds\n", SortFunction.MergeBU, t5);
 
         double t6 = timeRandomInput(SortFunction.Quick, N, T);
-        StdOut.printf("    %s use %.2f seconds\n", SortFunction.Quick, t6);
+        System.out.printf("    %s use %.2f seconds\n", SortFunction.Quick, t6);
 
         double t7 = timeRandomInput(SortFunction.Quick3way, N, T);
-        StdOut.printf("    %s use %.2f seconds\n", SortFunction.Quick3way, t7);
+        System.out.printf("    %s use %.2f seconds\n", SortFunction.Quick3way, t7);
     }
 }

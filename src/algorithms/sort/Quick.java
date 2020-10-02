@@ -1,8 +1,10 @@
 package algorithms.sort;
 
-import edu.princeton.cs.algs4.StdRandom;
+import java.util.Random;
 
 public class Quick<T extends Comparable<? super T>> extends Example<T> {
+    private static final long seed = System.currentTimeMillis();
+    private static final Random random = new Random(seed);
 
     public Quick(T[] array) {
         super(array);
@@ -10,7 +12,7 @@ public class Quick<T extends Comparable<? super T>> extends Example<T> {
 
     @Override
     public void sort() {
-        StdRandom.shuffle(array);
+        shuffle(array);
         sort(0, array.length - 1);
     }
 
@@ -45,6 +47,19 @@ public class Quick<T extends Comparable<? super T>> extends Example<T> {
         }
         exchange(low, j);
         return j;
+    }
+
+    private void shuffle(Object[] a) {
+        if (a == null) {
+            throw new IllegalArgumentException("argument is null");
+        }
+        int n = a.length;
+        for (int i = 0; i < n; i++) {
+            int r = i + random.nextInt(n - i);     // between i and n-1
+            Object temp = a[i];
+            a[i] = a[r];
+            a[r] = temp;
+        }
     }
 
 }
