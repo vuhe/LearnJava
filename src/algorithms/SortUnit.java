@@ -11,21 +11,21 @@ public final class SortUnit {
         throw new UnsupportedOperationException();
     }
 
-    public static <T extends Comparable<T>> T[] sortOf(T[] arr) {
+    public static <T extends Comparable<? super T>> T[] sortOf(T[] arr) {
         return sortOf(arr, SortFunction.Quick);
     }
 
-    public static <T extends Comparable<T>> T[] sortOf(T[] arr, SortFunction function) {
+    public static <T extends Comparable<? super T>> T[] sortOf(T[] arr, SortFunction function) {
         Example<T> example = function.getAFunction(arr);
         example.sort();
         return example.getArray();
     }
 
-    public static <T extends Comparable<T>> List<T> sortOf(List<T> list) {
+    public static <T extends Comparable<? super T>> List<T> sortOf(List<T> list) {
         return sortOf(list, SortFunction.Quick);
     }
 
-    public static <T extends Comparable<T>> List<T> sortOf(List<T> list, SortFunction function) {
+    public static <T extends Comparable<? super T>> List<T> sortOf(List<T> list, SortFunction function) {
         @SuppressWarnings("unchecked")
         T[] arr = (T[])list.toArray();
         arr = sortOf(arr, function);
