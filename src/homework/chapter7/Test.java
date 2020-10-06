@@ -66,6 +66,6 @@ class MyTriangle implements ShapeArea {
 public class Test {
     public static void main(String[] args) {
         MyTriangle triangle = new MyTriangle(3, 4, 5);
-        System.out.println(triangle);
+        System.out.println(triangle.toString());
     }
 }
