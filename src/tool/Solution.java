@@ -1,7 +1,4 @@
-package test;
-
-import jdkpreview.Jdk17;
-import leetcode.ListNode;
+package tool;
 
 import java.util.*;
 
