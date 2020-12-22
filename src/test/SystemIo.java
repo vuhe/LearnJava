@@ -6,7 +6,7 @@ import java.util.Objects;
 /**
  * @author vuhe
  */
-public class SystemIo {
+class SystemIo {
     /**
      * 默认存储路径
      */
@@ -17,7 +17,7 @@ public class SystemIo {
      *
      * @param triangle 三角形
      */
-    public static void printTriangle(Triangle triangle) {
+    static void printTriangle(Triangle triangle) {
         System.out.print("此三角形边三长为 ");
         System.out.print(triangle.a + " ");
         System.out.print(triangle.b + " ");
@@ -35,7 +35,7 @@ public class SystemIo {
      * @param triangle 三角形
      * @return 写入的文件
      */
-    public static File writeTriangleToFile(Triangle triangle) {
+    static File writeTriangleToFile(Triangle triangle) {
         File file = new File(PATH);
         try (var out = new FileWriter(file)) {
             out.write(triangle.a + "\n");
@@ -54,7 +54,7 @@ public class SystemIo {
      * @param file 文件
      * @return 三角形
      */
-    public static Triangle readFileToTriangle(File file) {
+    static Triangle readFileToTriangle(File file) {
         // 检查是否是文件
         if (!file.isFile()) {
             throw new IllegalArgumentException("传入文件错误");

@@ -14,8 +14,13 @@ public class Main {
      * @param args 入参
      */
     public static void main(String... args) {
-//        SystemIo.writeTriangleToFile(Triangle.of(2, 2, 3));
-        var f = SystemIo.readFileToTriangle(new File("./testcase/triangle.txt"));
-        SystemIo.printTriangle(f);
+        System.out.println("input: ");
+        readFileAndOutput(new File("./testcase/triangle.txt"));
+    }
+
+    public static File readFileAndOutput(File file) {
+        var triangle = SystemIo.readFileToTriangle(file);
+        SystemIo.printTriangle(triangle);
+        return SystemIo.writeTriangleToFile(triangle);
     }
 }

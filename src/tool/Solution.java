@@ -1,5 +1,6 @@
 package tool;
 
+import java.io.IOException;
 import java.util.*;
 
 
@@ -24,11 +25,5 @@ class Solution {
 
     public static void main(String... args) {
         Solution s0 = new Solution();
-//        System.out.println(Arrays.toString(new int[]{}));
-//        s0.removeElement(null, 1);
-//        double key = s0.maxProbability(3, new int[][]{{0,1},{1,2},{0,2}}, new double[]{0.5,0.5,0.2}, 0, 2);
-//        System.out.println(key);
-//        Map<Integer, Integer> a = new HashMap<>();
-//        Character a0;
     }
 }

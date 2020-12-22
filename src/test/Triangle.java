@@ -5,7 +5,7 @@ import java.util.Arrays;
 /**
  * @author vuhe
  */
-public class Triangle {
+class Triangle {
     /**
      * 从小到大赋值
      * 即 a <= b <= c
@@ -20,7 +20,7 @@ public class Triangle {
 
     // 生成模块
 
-    public static Triangle of(int a, int b, int c) {
+    static Triangle of(int a, int b, int c) {
         if (a < 0 || b < 0 || c < 0) {
             throw new IllegalArgumentException("三角形三边长不能为负数！");
         }
@@ -41,7 +41,7 @@ public class Triangle {
     /**
      * 直角三角形 判断
      */
-    public boolean isRightTriangle() {
+    boolean isRightTriangle() {
         // 已经规定了 a <= b <= c
         // 因此 c 一定会是斜边
         int aa = a * a;
@@ -58,7 +58,7 @@ public class Triangle {
     /**
      * 获取周长
      */
-    public int getPerimeter() {
+    int getPerimeter() {
         int perimeter = a + b + c;
         if (perimeter < 0) {
             throw new RuntimeException("运算错误，三边过大！");
