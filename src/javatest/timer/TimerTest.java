@@ -4,6 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.time.Instant;
 
+/**
+ * @author zhuhe
+ */
 public class TimerTest {
     public static void main(String... args) {
         var timer = new Timer(1000, e -> {

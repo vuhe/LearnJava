@@ -1,8 +1,11 @@
-package javatest.serialClone;
+package javatest.clone;
 
 import java.io.*;
 import java.time.LocalDate;
 
+/**
+ * @author zhuhe
+ */
 public class SerialCloneTest {
     public static void main(String... args) throws CloneNotSupportedException {
         var harry = new Employee("Harry Hacker", 35000, 1989, 10, 1);
@@ -17,6 +20,7 @@ public class SerialCloneTest {
 }
 
 class SerialCloneable implements Cloneable, Serializable {
+    @Override
     public Object clone() throws CloneNotSupportedException {
         try {
             var bout = new ByteArrayOutputStream();
@@ -37,9 +41,9 @@ class SerialCloneable implements Cloneable, Serializable {
 }
 
 class Employee extends SerialCloneable {
-    private String name;
+    private final String name;
     private double salary;
-    private LocalDate hireDay;
+    private final LocalDate hireDay;
 
     public Employee(String n, double s, int year, int month, int day) {
         name = n;

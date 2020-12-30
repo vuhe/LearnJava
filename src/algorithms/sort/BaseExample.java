@@ -2,11 +2,14 @@ package algorithms.sort;
 
 import java.util.Arrays;
 
-public abstract class Example<T extends Comparable<? super T>> {
+/**
+ * @author zhuhe
+ */
+public abstract class BaseExample<T extends Comparable<? super T>> {
 
     protected T[] array;
 
-    protected Example(T[] array) {
+    protected BaseExample(T[] array) {
         this.array = Arrays.copyOf(array, array.length);
     }
 

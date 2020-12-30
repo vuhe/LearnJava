@@ -1,5 +1,8 @@
 package algorithms.sort;
 
+/**
+ * @author zhuhe
+ */
 public class Quick3way<T extends Comparable<? super T>> extends Quick<T> {
 
     public Quick3way(T[] array) {

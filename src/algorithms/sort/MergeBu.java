@@ -3,21 +3,24 @@ package algorithms.sort;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MergeBU<T extends Comparable<? super T>> extends Example<T> {
+/**
+ * @author zhuhe
+ */
+public class MergeBu<T extends Comparable<? super T>> extends BaseExample<T> {
 
     protected List<T> aux;
 
-    public MergeBU(T[] array) {
+    public MergeBu(T[] array) {
         super(array);
         aux = new ArrayList<>(List.of(array));
     }
 
     @Override
     public void sort() {
-        int N = array.length;
-        for (int sz = 1; sz < N; sz = sz + sz) {
-            for (int low = 0; low < N - sz; low += sz + sz) {
-                merge(low, low + sz - 1, Math.min(low + sz + sz -1, N -1));
+        int n = array.length;
+        for (int sz = 1; sz < n; sz = sz + sz) {
+            for (int low = 0; low < n - sz; low += sz + sz) {
+                merge(low, low + sz - 1, Math.min(low + sz + sz -1, n -1));
             }
         }
     }

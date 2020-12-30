@@ -2,9 +2,12 @@ package algorithms.sort;
 
 import java.util.Random;
 
-public class Quick<T extends Comparable<? super T>> extends Example<T> {
-    private static final long seed = System.currentTimeMillis();
-    private static final Random random = new Random(seed);
+/**
+ * @author zhuhe
+ */
+public class Quick<T extends Comparable<? super T>> extends BaseExample<T> {
+    private static final long SEED = System.currentTimeMillis();
+    private static final Random RANDOM = new Random(SEED);
 
     public Quick(T[] array) {
         super(array);
@@ -55,7 +58,8 @@ public class Quick<T extends Comparable<? super T>> extends Example<T> {
         }
         int n = a.length;
         for (int i = 0; i < n; i++) {
-            int r = i + random.nextInt(n - i);     // between i and n-1
+            // between i and n-1
+            int r = i + RANDOM.nextInt(n - i);
             Object temp = a[i];
             a[i] = a[r];
             a[r] = temp;

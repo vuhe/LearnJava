@@ -2,6 +2,9 @@ package leetcode;
 
 import java.util.Iterator;
 
+/**
+ * @author zhuhe
+ */
 public final class ListNode implements Iterable<ListNode>, Cloneable {
     public int val;
     public ListNode next;
@@ -78,9 +81,6 @@ public final class ListNode implements Iterable<ListNode>, Cloneable {
         Iterator<ListNode> it = this.iterator();
         while (it.hasNext()) {
             sb.append(it.next().val);
-            // 测试地址时使用
-//            sb.append("@");
-//            sb.append(System.identityHashCode(ptr));
             if (it.hasNext()) {
                 sb.append(", ");
             }

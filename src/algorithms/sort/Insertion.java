@@ -1,6 +1,9 @@
 package algorithms.sort;
 
-public class Insertion<T extends Comparable<? super T>> extends Example<T> {
+/**
+ * @author zhuhe
+ */
+public class Insertion<T extends Comparable<? super T>> extends BaseExample<T> {
 
     public Insertion(T[] array) {
         super(array);
@@ -8,8 +11,8 @@ public class Insertion<T extends Comparable<? super T>> extends Example<T> {
 
     @Override
     public void sort() {
-        int N = array.length;
-        for (int i = 1; i < N; i++) {
+        int n = array.length;
+        for (int i = 1; i < n; i++) {
             T t = array[i];
             int j = i - 1;
             for (; j >= 0 && less(t, array[j]); j--) {

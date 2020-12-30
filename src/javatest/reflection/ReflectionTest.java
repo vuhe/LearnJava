@@ -6,6 +6,9 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.util.Scanner;
 
+/**
+ * @author zhuhe
+ */
 public class ReflectionTest {
     public static void main(String... args) throws ReflectiveOperationException {
         String name;

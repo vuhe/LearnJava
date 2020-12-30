@@ -3,6 +3,9 @@ package leetcode;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author zhuhe
+ */
 public class Graph {
 
     /**
@@ -71,15 +74,9 @@ public class Graph {
      * @return 无向图
      */
     public static Node edgesToUndirectedGraph(int[][] edges) {
-        Map<Integer, Node> map = new HashMap<>();
+        Map<Integer, Node> map = new HashMap<>(edges.length);
         for (int[] edge : edges) {
-            if (!map.containsKey(edge[0])) {
-                map.put(edge[0], new Node(edge[0]));
-            }
-            if (!map.containsKey(edge[1])) {
-                map.put(edge[1], new Node(edge[1]));
-            }
-            map.get(edge[0]).neighbors.add(map.get(edge[1]));
+            buildGraph(map, edge);
             map.get(edge[1]).neighbors.add(map.get(edge[0]));
         }
         return map.get(edges[0][0]);
@@ -101,15 +98,9 @@ public class Graph {
      * @return 有向图
      */
     public static Node edgesToDirectedGraph(int[][] edges) {
-        Map<Integer, Node> map = new HashMap<>();
+        Map<Integer, Node> map = new HashMap<>(edges.length);
         for (int[] edge : edges) {
-            if (!map.containsKey(edge[0])) {
-                map.put(edge[0], new Node(edge[0]));
-            }
-            if (!map.containsKey(edge[1])) {
-                map.put(edge[1], new Node(edge[1]));
-            }
-            map.get(edge[0]).neighbors.add(map.get(edge[1]));
+            buildGraph(map, edge);
         }
         return map.get(edges[0][0]);
     }
@@ -138,5 +129,15 @@ public class Graph {
             }
         }
         return  ans;
+    }
+
+    private static void buildGraph(Map<Integer, Node> map, int[] edge) {
+        if (!map.containsKey(edge[0])) {
+            map.put(edge[0], new Node(edge[0]));
+        }
+        if (!map.containsKey(edge[1])) {
+            map.put(edge[1], new Node(edge[1]));
+        }
+        map.get(edge[0]).neighbors.add(map.get(edge[1]));
     }
 }

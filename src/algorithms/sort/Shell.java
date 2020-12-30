@@ -1,6 +1,9 @@
 package algorithms.sort;
 
-public class Shell<T extends Comparable<? super T>> extends Example<T> {
+/**
+ * @author zhuhe
+ */
+public class Shell<T extends Comparable<? super T>> extends BaseExample<T> {
 
     public Shell(T[] array) {
         super(array);
@@ -8,13 +11,13 @@ public class Shell<T extends Comparable<? super T>> extends Example<T> {
 
     @Override
     public void sort() {
-        int N = array.length;
+        int n = array.length;
         int h = 1;
-        while (h < N / 3) {
+        while (h < n / 3) {
             h = 3 * h + 1;
         }
         while (h >= 1) {
-            for (int i = h; i < N; i++) {
+            for (int i = h; i < n; i++) {
                 T t = array[i];
                 int j = i - h;
                 for (; j >= 0 && less(t, array[j]); j -= h) {

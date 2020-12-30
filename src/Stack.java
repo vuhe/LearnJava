@@ -1,6 +1,6 @@
 /*
  * Copyright (c) 2020.
- * User: zhuhe
+ * User: vuhe
  * File: Stack.java
  * Date: 2020/06/20 13:08:20
  */
@@ -8,7 +8,7 @@
 import java.util.LinkedList;
 
 /**
- * TODO
+ * Stack
  *
  * @author zhuhe
  */
@@ -16,7 +16,8 @@ public class Stack<T> {
 
     private final LinkedList<T> stack = new LinkedList<>();
 
-    public Stack() {}
+    public Stack() {
+    }
 
     public T push(T item) {
         stack.push(item);

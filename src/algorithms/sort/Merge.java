@@ -1,6 +1,9 @@
 package algorithms.sort;
 
-public class Merge<T extends Comparable<? super T>> extends MergeBU<T> {
+/**
+ * @author zhuhe
+ */
+public class Merge<T extends Comparable<? super T>> extends MergeBu<T> {
 
     public Merge(T[] array) {
         super(array);

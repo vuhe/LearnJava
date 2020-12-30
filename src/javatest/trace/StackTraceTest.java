@@ -1,7 +1,10 @@
-package javatest.stackTrace;
+package javatest.trace;
 
 import java.util.Scanner;
 
+/**
+ * @author zhuhe
+ */
 public class StackTraceTest {
     public static int factorial(int n) {
         System.out.println("factorial(" + n + "):");

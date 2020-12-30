@@ -1,4 +1,4 @@
-package javatest.objectAnalyzer;
+package javatest.object;
 
 import java.util.ArrayList;
 

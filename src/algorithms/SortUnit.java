@@ -16,7 +16,7 @@ public final class SortUnit {
     }
 
     public static <T extends Comparable<? super T>> T[] sortOf(T[] arr, SortFunction function) {
-        Example<T> example = function.getAFunction(arr);
+        BaseExample<T> example = function.getAFunction(arr);
         example.sort();
         return example.getArray();
     }
@@ -38,46 +38,46 @@ public final class SortUnit {
 enum SortFunction {
     Selection() {
         @Override
-        public <T extends Comparable<? super T>> Example<T> getAFunction(T[] arr) {
+        public <T extends Comparable<? super T>> BaseExample<T> getAFunction(T[] arr) {
             return new Selection<>(arr);
         }
     },
     Insertion() {
         @Override
-        public <T extends Comparable<? super T>> Example<T> getAFunction(T[] arr) {
+        public <T extends Comparable<? super T>> BaseExample<T> getAFunction(T[] arr) {
             return new Insertion<>(arr);
         }
     },
     Shell() {
         @Override
-        public <T extends Comparable<? super T>> Example<T> getAFunction(T[] arr) {
+        public <T extends Comparable<? super T>> BaseExample<T> getAFunction(T[] arr) {
             return new Shell<>(arr);
         }
     },
     Merge() {
         @Override
-        public <T extends Comparable<? super T>> Example<T> getAFunction(T[] arr) {
+        public <T extends Comparable<? super T>> BaseExample<T> getAFunction(T[] arr) {
             return new Merge<>(arr);
         }
     },
     MergeBU() {
         @Override
-        public <T extends Comparable<? super T>> Example<T> getAFunction(T[] arr) {
-            return new MergeBU<>(arr);
+        public <T extends Comparable<? super T>> BaseExample<T> getAFunction(T[] arr) {
+            return new MergeBu<>(arr);
         }
     },
     Quick() {
         @Override
-        public <T extends Comparable<? super T>> Example<T> getAFunction(T[] arr) {
+        public <T extends Comparable<? super T>> BaseExample<T> getAFunction(T[] arr) {
             return new Quick<>(arr);
         }
     },
     Quick3way() {
         @Override
-        public <T extends Comparable<? super T>> Example<T> getAFunction(T[] arr) {
+        public <T extends Comparable<? super T>> BaseExample<T> getAFunction(T[] arr) {
             return new Quick3way<>(arr);
         }
     };
 
-    public abstract  <T extends Comparable<? super T>> Example<T> getAFunction(T[] arr);
+    public abstract  <T extends Comparable<? super T>> BaseExample<T> getAFunction(T[] arr);
 }

@@ -7,6 +7,9 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+/**
+ * @author zhuhe
+ */
 public class CollectingResults {
     private static Stream<String> noVowels() throws IOException {
         var contents = Files.readString(Paths.get("./testcase/alice30.txt"));

@@ -3,21 +3,22 @@ package javatest.logging;
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.logging.*;
 
+/**
+ * @author zhuhe
+ */
 public class LoggingImageViewer {
     public static void main(String... args) {
         if (System.getProperty("java.util.logging.config.class") == null
         && System.getProperty("java.util.logging.config.file") == null) {
             try {
                 Logger.getLogger("site.zhuhe.java").setLevel(Level.ALL);
-                final int LOG_ROTATION_COUNT = 10;
-                var handler = new FileHandler("%h/LoggingImageViewer.log", 0, LOG_ROTATION_COUNT);
+                final int logRotationCount = 10;
+                var handler = new FileHandler("%h/LoggingImageViewer.log", 0, logRotationCount);
                 Logger.getLogger("site.zhuhe.java").addHandler(handler);
             } catch (IOException e) {
                 Logger.getLogger("site.zhuhe.java").log(Level.SEVERE, "Can't create log file handler", e);
@@ -44,7 +45,7 @@ class ImageViewerFrame extends JFrame {
     private static final int DEFAULT_HEIGHT = 400;
 
     private JLabel label;
-    private static Logger logger = Logger.getLogger("site.zhuhe.java");
+    private static final Logger logger = Logger.getLogger("site.zhuhe.java");
 
     public ImageViewerFrame() {
         logger.entering("ImageViewerFrame", "<init>");
@@ -102,7 +103,7 @@ class ImageViewerFrame extends JFrame {
 }
 
 class WindowHandler extends StreamHandler {
-    private JFrame frame;
+    private final JFrame frame;
 
     public WindowHandler() {
         frame = new JFrame();
@@ -114,11 +115,11 @@ class WindowHandler extends StreamHandler {
         frame.setVisible(true);
         setOutputStream(new OutputStream() {
             @Override
-            public void write(int b) throws IOException {
+            public void write(int b) {
             }
 
             @Override
-            public void write(byte[] b, int off, int len) throws IOException {
+            public void write(byte[] b, int off, int len) {
                 output.append(new String(b, off, len));
             }
         });

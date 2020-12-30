@@ -5,6 +5,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.List;
 
+/**
+ * @author zhuhe
+ */
 public class CountLongWords {
     public static void main(String[] args) throws IOException {
         var contents = Files.readString(Paths.get("./testcase/alice30.txt"));

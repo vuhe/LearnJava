@@ -5,6 +5,8 @@ import java.util.Comparator;
 
 /**
  * 未完成
+ *
+ * @author zhuhe
  */
 public class Jdk8 {
     /**
@@ -16,7 +18,7 @@ public class Jdk8 {
             System.out.println(Integer.toBinaryString(e));
         });
 
-        Arrays.asList( "a", "b", "d" ).sort(Comparator.reverseOrder());
+        Arrays.asList("a", "b", "d").sort(Comparator.reverseOrder());
     }
 
     /**
@@ -25,6 +27,9 @@ public class Jdk8 {
      */
     @FunctionalInterface
     public interface Functional {
+        /**
+         * 测试方法
+         */
         void method();
     }
 
@@ -34,8 +39,12 @@ public class Jdk8 {
      * 即不强制那些实现了该接口的类也同时实现这个新加的方法。
      */
     private interface Defaultable {
-        // Interfaces now allow default methods, the implementer may or
-        // may not implement (override) them.
+        /**
+         * Interfaces now allow default methods, the implementer may or
+         * may not implement (override) them.
+         *
+         * @return 默认实现
+         */
         default String notRequired() {
             return "Default implementation";
         }

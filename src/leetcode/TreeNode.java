@@ -3,6 +3,9 @@ package leetcode;
 import java.util.LinkedList;
 import java.util.Queue;
 
+/**
+ * @author zhuhe
+ */
 public final class TreeNode {
     public int val;
     public TreeNode left;
@@ -62,7 +65,7 @@ public final class TreeNode {
         Integer[] nums = new Integer[parts.length];
         for (int i = 0; i < parts.length; i++) {
             String item = parts[i].trim();
-            if (item.equals("null")) {
+            if ("null".equals(item)) {
                 nums[i] = null;
             } else {
                 nums[i] = Integer.parseInt(item);
@@ -72,7 +75,7 @@ public final class TreeNode {
     }
 
     public static void prettyPrintTree(TreeNode node) {
-        prettyPrintTree(node,  "", true);
+        prettyPrintTree(node, "", true);
     }
 
     @Override

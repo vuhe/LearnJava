@@ -16,16 +16,19 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
+/**
+ * @author zhuhe
+ */
 public class CreatingStreams {
     private static <T> void show(String title, Stream<T> stream) {
-        final int SIZE = 10;
-        List<T> firstElements = stream.limit(SIZE + 1).collect(Collectors.toList());
+        final int size = 10;
+        List<T> firstElements = stream.limit(size + 1).collect(Collectors.toList());
         System.out.print(title + ": ");
         for (int i = 0; i < firstElements.size(); i++) {
             if (i > 0) {
                 System.out.print(", ");
             }
-            if (i < SIZE) {
+            if (i < size) {
                 System.out.print(firstElements.get(i));
             } else {
                 System.out.print("...");
@@ -54,7 +57,7 @@ public class CreatingStreams {
         Stream<BigInteger> integers = Stream.iterate(BigInteger.ONE, n -> n.add(BigInteger.ONE));
         show("integers", integers);
 
-        Stream<String> wordAnotherWay = Pattern.compile("\\PL+").splitAsStream(contents);
+        final Stream<String> wordAnotherWay = Pattern.compile("\\PL+").splitAsStream(contents);
         show("wordAnotherWay", wordAnotherWay);
 
         try (Stream<String> lines = Files.lines(path, StandardCharsets.UTF_8)) {

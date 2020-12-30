@@ -1,9 +1,12 @@
-package javatest.genericReflection;
+package javatest.reflection.generic;
 
 import java.lang.reflect.*;
 import java.util.Arrays;
 import java.util.Scanner;
 
+/**
+ * @author zhuhe
+ */
 public class GenericReflection {
     public static void main(String... args) {
         String name;
@@ -54,7 +57,7 @@ public class GenericReflection {
     }
 
     private static void printTypes(Type[] types, String pre, String sep, String suf, boolean isDefinition) {
-        if (pre.equals(" extends ") && Arrays.equals(types, new Type[]{ Object.class })) {
+        if (" extends ".equals(pre) && Arrays.equals(types, new Type[]{ Object.class })) {
             return;
         }
         if (types.length > 0) {
