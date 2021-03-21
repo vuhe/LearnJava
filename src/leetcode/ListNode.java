@@ -14,6 +14,11 @@ public final class ListNode implements Iterable<ListNode>, Cloneable {
         next = null;
     }
 
+    public ListNode(int x, ListNode next) {
+        val = x;
+        this.next = next;
+    }
+
     public static ListNode toList(int[] array) {
         if (array.length == 0) {
             return null;
