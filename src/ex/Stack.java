@@ -1,14 +1,14 @@
-/*
+package ex;/*
  * Copyright (c) 2020.
  * User: vuhe
- * File: Stack.java
+ * File: ex.Stack.java
  * Date: 2020/06/20 13:08:20
  */
 
 import java.util.LinkedList;
 
 /**
- * Stack
+ * ex.Stack
  *
  * @author zhuhe
  */
