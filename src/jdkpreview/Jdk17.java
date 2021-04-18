@@ -14,18 +14,18 @@ public class Jdk17 {
         System.out.println(html);
     }
 
-//    /**
-//     * 类型测试
-//     *
-//     * @param o 一个可能是Object的类
-//     */
-//    public void instanceofTest(Object o) {
-//        if (o instanceof String s) {
-//            System.out.println(s);
-//        } else {
-//            System.out.println("Object is not a String");
-//        }
-//    }
+    /**
+     * 类型测试
+     *
+     * @param o 一个可能是Object的类
+     */
+    public void instanceofTest(Object o) {
+        if (o instanceof String s) {
+            System.out.println(s);
+        } else {
+            System.out.println("Object is not a String");
+        }
+    }
 
     public void switchTest() {
         int num = (int) (Math.random() * 10) % 4;
