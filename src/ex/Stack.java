@@ -1,9 +1,10 @@
-package ex;/*
+/*
  * Copyright (c) 2020.
  * User: vuhe
  * File: ex.Stack.java
  * Date: 2020/06/20 13:08:20
  */
+package ex;
 
 import java.util.LinkedList;
 
